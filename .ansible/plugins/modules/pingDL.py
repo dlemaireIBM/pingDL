@@ -74,16 +74,16 @@ def main():
         supports_check_mode=True
     )
 
+    result = dict(
+        tic=module.params['data'],
+        toto=module.params['chg']
+    )
+
     if module.params['data'] == 'crash':
         raise Exception("boom")
 
     if module.params['chg']:
         result['changed'] = module.params['chg']
-
-    result = dict(
-        ping=module.params['data'],
-        toto=module.params['chg']
-    )
 
     module.exit_json(**result)
 
