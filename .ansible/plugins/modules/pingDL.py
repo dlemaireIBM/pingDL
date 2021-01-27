@@ -68,10 +68,10 @@ from ansible.module_utils.basic import AnsibleModule
 def main():
     module = AnsibleModule(
         argument_spec=dict(
-            data=dict(type='str', default='pong'),
+            data=dict(type='str', default='tac'),
             chg=dict(type='bool', default=True)
         ),
-        supports_check_mode=False
+        supports_check_mode=True
     )
 
     if module.params['data'] == 'crash':
